@@ -28,6 +28,18 @@ for i = 1:1:w
     colsum(i) = colsum(i) / sum;
 end
 
+% read and write files
+% for each latitude, the access probability
+% x-axis should be in range [-90,90)
+fid = fopen('lat.txt','wt');
+fprintf(fid,'%g\n',rowsum);
+fclose(fid);
+
+% for each longtitude, the access probability
+% x-axis should be in range [-180,180)
+fid = fopen('lng.txt','wt');
+fprintf(fid,'%g\n',colsum);
+fclose(fid);
 
 
 
